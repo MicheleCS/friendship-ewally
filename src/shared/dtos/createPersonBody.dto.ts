@@ -1,6 +1,6 @@
 import { IsNotEmpty, IsString } from "class-validator";
 
-export class CretePersonBodyDTO {
+export class CreatePersonBodyDTO {
   
   @IsString()
   @IsNotEmpty()
