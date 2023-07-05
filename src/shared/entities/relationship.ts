@@ -1,16 +1,6 @@
-import { IsNotEmpty } from "class-validator";
-import { Column, Entity, PrimaryGeneratedColumn, Unique } from "typeorm";
+export class RelationshipEntity {
 
-@Entity('relationship')
-export class Relationship {
-  @PrimaryGeneratedColumn('uuid')
-  id: string;
+  cpf: string;
 
-  @IsNotEmpty()
-  @Column({nullable: false})
   cpf1: string;
-
-  @IsNotEmpty()
-  @Column({nullable: false})
-  cpf2: string;
 }

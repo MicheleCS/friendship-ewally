@@ -1,11 +1,11 @@
 import { IsNotEmpty, IsString } from "class-validator";
 
-export class CreteRelationshipBodyDTO {
+export class CreateRelationshipBodyDTO {
   @IsString()
   @IsNotEmpty()
-  cpf1: string;
+  cpf: string;
 
   @IsString()
   @IsNotEmpty()
-  cpf2: string;
+  cpf1: string;
 }
