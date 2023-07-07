@@ -19,4 +19,11 @@ export class RelationshipRepository {
       return relationship.cpf === cpf
     })
   }
+
+  public async getAllRecommendations(cpf: string) {
+    return this.relationship
+    .forEach((cpf1) => {
+      return this.relationship.includes(cpf1)
+    })
+  }
 }

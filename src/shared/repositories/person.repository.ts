@@ -13,8 +13,8 @@ export class PersonRepository {
     return this.person.filter((person) => person.cpf === cpf)
   }
 
-  public async getOnePerson(cpf:string) {
-    return await this.person
+  public async getOnePerson(cpf: string) {
+    return this.person
     .filter(person => {
       return person.cpf == cpf
     })

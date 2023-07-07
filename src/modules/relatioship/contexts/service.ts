@@ -12,7 +12,7 @@ export class RelationshipService {
     const cpf = await this.personRepository.existsPerson( data.cpf)
     if (!cpf) throw new NotFoundException('Not Found Person')
   
-    const cpf1 = await this.personRepository.existsPerson(data.cpf1)
+    const cpf1 = await this.personRepository.existsPerson(data.cpf)
     if (!cpf1) throw new NotFoundException('Not Found Person')
 
     return this.repository.createRelationship(data)
@@ -30,5 +30,27 @@ export class RelationshipService {
     }
 
     return response
+  }
+
+  async getAllRecommendations(cpf: string) {
+    const relationship = await this.repository.getOneRelationship(cpf)
+      if(relationship.length === 0) {
+        throw new NotFoundException('Not Found Exception')
+      }
+
+    const listFriends: string[] = [];
+     
+    relationship.forEach((cpf) => {
+      const friends = this.repository.getOneRelationship(cpf.cpf1)
+
+      if(friends) {
+        const recommendations = this.repository.getAllRecommendations(cpf.cpf1)
+        return recommendations
+      }
+      if (!listFriends.includes('cpf')) {
+        listFriends.push('cpf');
+      }
+    });
+    return listFriends
   }
 }
