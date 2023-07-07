@@ -25,5 +25,10 @@ export class RelationshipController {
    public async getOneRelationship(@Param('cpf') cpf: string){
     return this.service.getOneRelationship(cpf)
   }
-  
+
+  @Get('recommendations/:cpf')
+  @HttpCode(HttpStatus.OK)
+   public async getAllRecommendations(@Param('cpf') cpf: string) {
+    return this.service.getAllRecommendations(cpf)
+  }
 }

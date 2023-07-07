@@ -1,6 +1,6 @@
 import { BadRequestException, Injectable, NotFoundException } from "@nestjs/common";
 import { PersonEntity } from "src/shared/entities/person.entity";
-import { PersonRepository } from "src/shared/repositories/person.repository";
+import { PersonRepository } from 'src/shared/repositories/person.repository';
 
 @Injectable()
 export class PersonService {
