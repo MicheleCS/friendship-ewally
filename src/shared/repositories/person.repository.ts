@@ -9,8 +9,8 @@ export class PersonRepository {
     return data
   }
 
-  public async existsPerson(cpf: string) {
-    return this.person.filter((person) => person.cpf === cpf)
+  public async existsPerson(cpf1: string) {
+    return this.person.filter((person) => person.cpf == cpf1)
   }
 
   public async getOnePerson(cpf: string) {

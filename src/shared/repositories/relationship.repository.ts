@@ -10,7 +10,7 @@ export class RelationshipRepository {
   }
 
   public async getAllRelationship() {
-    return await this.relationship
+    return this.relationship
   }
 
   public async getOneRelationship(cpf: string) {
@@ -18,6 +18,14 @@ export class RelationshipRepository {
     .filter(relationship => {
       return relationship.cpf === cpf
     })
+  }
+
+  public async deleteRelationship(cpf: string) {
+    for(let i = 0; i < this.relationship.length; i++){
+      if(this.relationship[i].cpf == cpf){
+        this.relationship.splice(i, 1)
+      }
+    }
   }
 
   public async getAllRecommendations(cpf: string) {

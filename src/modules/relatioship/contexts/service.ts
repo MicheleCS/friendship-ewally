@@ -9,11 +9,11 @@ export class RelationshipService {
   private personRepository = new PersonRepository()
 
   async createRelationship(data: RelationshipEntity) {
-    const cpf = await this.personRepository.existsPerson( data.cpf)
+    const cpf = await this.personRepository.getOnePerson( data.cpf)
     if (cpf.length) throw new NotFoundException('Not Found Person')
   
-    const cpf1 = await this.personRepository.existsPerson(data.cpf1)
-    if (cpf1.length) throw new NotFoundException('Not Found Person')
+    const cpf1 = await this.personRepository.existsPerson(data.cpf)
+    if (cpf1.length) throw new NotFoundException('Not Found Person2')
 
     return this.repository.createRelationship(data)
   }
@@ -25,18 +25,19 @@ export class RelationshipService {
   async getOneRelationship(cpf: string) {
     const response = await this.repository.getOneRelationship(cpf)
 
-    if(response.length === 0) {
-      throw new NotFoundException('Not Found Exception')
-    }
+    if(response.length === 0) throw new NotFoundException('Not Found Exception')
+ 
 
     return response
   }
 
+  async deleteRelationship(cpf: string) {
+    return this.repository.deleteRelationship(cpf)
+  }
+
   async getAllRecommendations(cpf: string) {
     const relationship = await this.repository.getOneRelationship(cpf)
-      if(relationship.length === 0) {
-        throw new NotFoundException('Not Found Exception')
-      }
+      if(relationship.length === 0) throw new NotFoundException('Not Found Exception')
 
     const listFriends: string[] = [];
      
