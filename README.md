@@ -65,8 +65,9 @@ $ npm run test:cov
 2 - Faça Amigos com o CPF criado http://localhost:3000/relationships
 3 - Busque recomendaçoes de amigos com o CPF criado http://localhost:3000/relationships/recommendations/cpf
 
-## Link Postman
-https://documenter.getpostman.com/view/19469361/2s93zFYf5Y#4ab10f6e-a99e-440f-a403-a8ce3fb929f6
+## Link Postman 
+para as demais rotas:
+https://documenter.getpostman.com/view/19469361/2s93zGzHuv
 
 
 ## Support
