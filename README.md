@@ -58,6 +58,17 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
+## Passo a Passo
+
+```
+1 - Crie um cadastro http://localhost:3000/persons
+2 - Faça Amigos com o CPF criado http://localhost:3000/relationships
+3 - Busque recomendaçoes de amigos com o CPF criado http://localhost:3000/relationships/recommendations/cpf
+
+## Link Postman
+https://documenter.getpostman.com/view/19469361/2s93zFYf5Y#4ab10f6e-a99e-440f-a403-a8ce3fb929f6
+
+
 ## Support
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
