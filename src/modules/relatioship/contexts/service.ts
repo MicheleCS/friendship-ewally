@@ -10,10 +10,10 @@ export class RelationshipService {
 
   async createRelationship(data: RelationshipEntity) {
     const cpf = await this.personRepository.existsPerson( data.cpf)
-    if (!cpf) throw new NotFoundException('Not Found Person')
+    if (cpf.length) throw new NotFoundException('Not Found Person')
   
-    const cpf1 = await this.personRepository.existsPerson(data.cpf)
-    if (!cpf1) throw new NotFoundException('Not Found Person')
+    const cpf1 = await this.personRepository.existsPerson(data.cpf1)
+    if (cpf1.length) throw new NotFoundException('Not Found Person')
 
     return this.repository.createRelationship(data)
   }
